@@ -1,10 +1,10 @@
 #!/bin/bash
 
 case "$1" in
-    --date)
+    --date|-d)
         date
         ;;
-    --logs)
+    --logs|-l)
         if [ -z "$2" ]; wtedy
             num=100
         else
@@ -14,11 +14,11 @@ case "$1" in
             echo "Log number $i, created by skrypt.sh on $(date)" > log_$i.txt
         done
         ;;
-    --help)
+    --help|-h)
         echo "Dostępne opcje:"
-        echo "--date          Wyświetla dzisiejszą datę"
-        echo "--logs [liczba] Tworzy automatycznie [liczba] plików log_x.txt"
-        echo "--help          Wyświetla dostępne opcje"
+        echo "--date, -d      Wyświetla dzisiejszą datę"
+        echo "--logs, -l [liczba] Tworzy automatycznie [liczba] plików log_x.txt"
+        echo "--help, -h      Wyświetla dostępne opcje"
         ;;
     *)
         echo "Nieznana opcja. Użyj --help do wyświetlenia dostępnych opcji."
